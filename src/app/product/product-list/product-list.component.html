@@ -1,0 +1,36 @@
+<div class="main-container">
+    <div class="products-header">
+        <h3>Products</h3>
+        <input 
+            type='text' 
+            [(ngModel)]='listFilter'
+            class="filter-input" 
+            placeholder="Type Product Name" />
+    </div>
+
+    <br />
+    <app-loader [isLoading]='isLoading'></app-loader>
+    <div class="table-responsive">
+        <table class="table table-striped" *ngIf='products && products.length'>
+            <thead>
+                <tr>
+                    <th class="name">Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th class="more">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let product of filteredProducts'>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price | currency:'EUR':true:'1.2-2'}}</td>
+                    <td>{{ product.stock }}</td>
+                    <td><a [routerLink]="['/products', product.name]">View Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div *ngIf='errorMessage' class='alert alert-danger'>
+    Error: {{ errorMessage }}
+</div>
