@@ -7,9 +7,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Downoload or clone the project and go into the 'angular-coding-test' folder typing `cd angular-coding-test` in terminal.
 Then run `npm install`. Finally run the dev server.
 
-cd angular-coding-test
-npm install
-ng serve
+cd angular-coding-test <br />
+npm install <br />
+ng serve <br />
 
 ## Development server
 
